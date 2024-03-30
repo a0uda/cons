@@ -18,15 +18,8 @@ jobs:
         run: |
           pwd
           ls
-          cd ..
-          pwd
-          ls
-          cd ..
-          pwd
-          ls
-          docker build -t dev-frontend -f Dockerfile.dev .
-          cd cons/backend
-          docker build -t dev-backend -f Dockerfile.dev .
+          docker build -t dev-frontend -f frontend/Dockerfile.dev frontend
+          docker build -t dev-backend -f backend/Dockerfile.dev backend
 
       - name: Run Frontend and Backend For Testing Dev files
         run: |
