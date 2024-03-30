@@ -16,8 +16,10 @@ jobs:
 
       - name: Build Frontend and Backend For Dev files
         run: |
-          docker build -t dev-frontend -f cons/frontend/Dockerfile.dev cons/frontend
-          docker build -t dev-backend -f cons/backend/Dockerfile.dev cons/backend
+          pwd
+          ls
+          docker build -t dev-frontend -f frontend/Dockerfile.dev frontend
+          docker build -t dev-backend -f backend/Dockerfile.dev backend
 
       - name: Run Frontend and Backend For Testing Dev files
         run: |
@@ -34,9 +36,9 @@ jobs:
 
       - name: Build Frontend and Backend For Prod files
         run: |
-          docker build -t aoudaa/dkr-frontend:latest -f frontend
-          docker build -t aoudaa/dkr-backend:latest -f backend
-          docker build -t aoudaa/dkr-nginx:latest -f nginx
+          docker build -t aoudaa/dkr-frontend:latest -f ./frontend
+          docker build -t aoudaa/dkr-backend:latest -f ./backend
+          docker build -t aoudaa/dkr-nginx:latest -f ./nginx
 
   deploy:
     name: Deploy Frontend Backend and Nginx For Prod files
