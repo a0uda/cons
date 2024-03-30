@@ -18,8 +18,11 @@ jobs:
         run: |
           cd ..
           cd ..
-          docker build -t dev-frontend -f ./frontend/Dockerfile.dev ./frontend
-          docker build -t dev-backend -f ./backend/Dockerfile.dev ./backend
+          cd frontend/
+          docker build -t dev-frontend -f Dockerfile.dev .
+          cd .. 
+          cd backend/
+          docker build -t dev-backend -f Dockerfile.dev .
 
       - name: Run Frontend and Backend For Testing Dev files
         run: |
