@@ -16,6 +16,7 @@ jobs:
 
       - name: Build Frontend and Backend For Dev files
         run: |
+          pwd
           cd cons/frontend
           docker build -t dev-frontend -f Dockerfile.dev .
           cd cons/backend
