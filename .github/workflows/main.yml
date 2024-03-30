@@ -16,8 +16,8 @@ jobs:
 
       - name: Build Frontend and Backend For Dev files
         run: |
-          docker build -t dev-frontend -f /frontend/Dockerfile.dev frontend
-          docker build -t dev-backend -f /backend/Dockerfile.dev backend
+          docker build -t dev-frontend -f /cons/frontend/Dockerfile.dev /cons/frontend
+          docker build -t dev-backend -f /cons/backend/Dockerfile.dev /cons/backend
 
       - name: Run Frontend and Backend For Testing Dev files
         run: |
